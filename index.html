@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <title>ECE 9065 Lab 1</title> -->
+    <title>Pokedex</title>
+    <meta name="description" content="Webapp to display pokemons details">
+    <meta name="author" content="Akshpreet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- Place your content here -->
+    <div class="main-container">
+        <div class="title-container">
+            <span class="title">Pokedex</span>
+        </div>
+
+        <div id="gallery-container" class="gallery-container">
+
+            <div class="search-by-root">
+
+                <div class="search-by-label">
+                    <span>Search for a Pokemon by number or using its name.</span>
+                </div>
+
+                <div class="search-bar">
+
+                    <div class="search-by-number">
+
+                        <div class="search">
+                            <input id="search-id-input" type="number" class="search-input" min="1" max="20"
+                                placeholder="Search pokemon by number" onkeyup="searchById()">
+                            <button onclick="searchById()" id="search-id-btn" type="submit" class="search-button">
+                                Search
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="search-by-name">
+
+                        <div class="search">
+                            <input maxlength="20" id="search-name-input" type="text" class="search-input"
+                                placeholder="Search pokemon by name" onkeyup="searchByName()">
+                            <button onclick="searchByName()" id="search-name-btn" type="submit" class="search-button">
+                                Search
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="image-gallery" class="image-gallery">
+                <ul class="unordered-list" id="ul-list">
+
+                    <li class="pokemon">
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/1.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#001</span>&nbsp;
+                                    <span class="pokemon-name">Bulbasaur</span>
+                                </div>
+                                <span class="charge-move">Sludge Bomb/Seed Bomb/Power Whip</span>
+                                <div class="about">
+                                    <span class="pokeon-about fire-skill">Fire</span>
+                                    <span class="pokeon-about poison-skill">Poison</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/2.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#002</span>&nbsp;
+                                    <span class="pokemon-name">Ivysaur</span>
+                                </div>
+                                <span class="charge-move">Sludge Bomb/Solar Beam/Power Whip</span>
+                                <div class="about">
+                                    <span class="pokeon-about grass-skill">Grass</span>
+                                    <span class="pokeon-about poison-skill">Poison</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/3.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#003</span>&nbsp;
+                                    <span class="pokemon-name">Venusaur</span>
+                                </div>
+                                <span class="charge-move">Sludge Bomb/Petal Blizzard/Power
+                                    Whip</span>
+                                <div class="about">
+                                    <span class="pokeon-about grass-skill">Grass</span>
+                                    <span class="pokeon-about poison-skill">Poison</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/4.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#004</span>&nbsp;
+                                    <span class="pokemon-name">Charmander</span>
+                                </div>
+                                <span class="charge-move">Flame Burst/Flamethrower/Flame
+                                    Charge</span>
+                                <div class="about">
+                                    <span class="pokeon-about fire-skill">Fire</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/5.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#005</span>&nbsp;
+                                    <span class="pokemon-name">Charmeleon</span>
+                                </div>
+                                <span class="charge-move">Flame Burst/Flamethrower/Fire Punch</span>
+                                <div class="about">
+                                    <span class="pokeon-about fire-skill">Fire</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/6.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#006</span>&nbsp;
+                                    <span class="pokemon-name">Charizard</span>
+                                </div>
+                                <span class="charge-move">Fire Blast/Dragon Claw/Overheat</span>
+                                <div class="about">
+                                    <span class="pokeon-about fire-skill">Fire</span>
+                                    <span class="pokeon-about flying-skill">Flying</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/7.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#007</span>&nbsp;
+                                    <span class="pokemon-name">Squirtle</span>
+                                </div>
+                                <span class="charge-move">Aqua Jet/Aqua Tail/Water Pulse</span>
+                                <div class="about">
+                                    <span class="pokeon-about water-skill">Water</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/8.png" alt="image not found">
+                            </div>
+
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#008</span>&nbsp;
+                                    <span class="pokemon-name">Wartortle</span>
+                                </div>
+                                <span class="charge-move">Aqua Jet/Hydro Pump/Ice Beam</span>
+                                <div class="about">
+                                    <span class="pokeon-about water-skill">Water</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/9.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#009</span>&nbsp;
+                                    <span class="pokemon-name">Blastoise</span>
+                                </div>
+                                <span class="charge-move">Ice Beam/Hydro Pump/Flash Cannon</span>
+                                <div class="about">
+                                    <span class="pokeon-about water-skill">Water</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/10.png" alt="image not found">
+                            </div>
+
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#010</span>&nbsp;
+                                    <span class="pokemon-name">Caterpie</span>
+                                </div>
+                                <span class="charge-move">Struggle</span>
+                                <div class="about">
+                                    <span class="pokeon-about bug-skill">Bug</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/11.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#011</span>&nbsp;
+                                    <span class="pokemon-name">Metapod</span>
+                                </div>
+                                <span class="charge-move">Struggle</span>
+                                <div class="about">
+                                    <span class="pokeon-about bug-skill">Bug</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/12.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#012</span>&nbsp;
+                                    <span class="pokemon-name">Butterfree</span>
+                                </div>
+                                <span class="charge-move">Psychic/Bug Buz/Signal Beam</span>
+                                <div class="about">
+                                    <span class="pokeon-about bug-skill">Bug</span>
+                                    <span class="pokeon-about flying-skill">Flying</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/13.png" alt="image not found">
+                            </div>
+
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#013</span>&nbsp;
+                                    <span class="pokemon-name">Weedle</span>
+                                </div>
+                                <span class="charge-move">Struggle</span>
+                                <div class="about">
+                                    <span class="pokeon-about bug-skill">Bug</span>
+                                    <span class="pokeon-about poison-skill">Poison</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/14.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#014</span>&nbsp;
+                                    <span class="pokemon-name">Kakuna</span>
+                                </div>
+                                <span class="charge-move">Struggle</span>
+                                <div class="about">
+                                    <span class="pokeon-about bug-skill">Bug</span>
+                                    <span class="pokeon-about poison-skill">Poison</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/15.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#015</span>&nbsp;
+                                    <span class="pokemon-name">Beedrill</span>
+                                </div>
+                                <span class="charge-move">Aerial Ace/Sludge Bomb/X-Scissor</span>
+                                <div class="about">
+                                    <span class="pokeon-about bug-skill">Bug</span>
+                                    <span class="pokeon-about poison-skill">Poison</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/16.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#016</span>&nbsp;
+                                    <span class="pokemon-name">Pidgey</span>
+                                </div>
+                                <span class="charge-move">Twister/Aerial Ace/Air Cutter</span>
+                                <div class="about">
+                                    <span class="pokeon-about normal-skill">Normal</span>
+                                    <span class="pokeon-about flying-skill">Flying</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/17.png" alt="image not found">
+                            </div>
+
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#017</span>&nbsp;
+                                    <span class="pokemon-name">Pidgeotto</span>
+                                </div>
+                                <span class="charge-move">Twister/Aerial Ace/Air Cutter</span>
+                                <div class="about">
+                                    <span class="pokeon-about normal-skill">Normal</span>
+                                    <span class="pokeon-about flying-skill">Flying</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/18.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#018</span>&nbsp;
+                                    <span class="pokemon-name">Pidgeot</span>
+                                </div>
+                                <span class="charge-move">Hurricane/Aerial Ace/Brave Bird</span>
+                                <div class="about">
+                                    <span class="pokeon-about normal-skill">Normal</span>
+                                    <span class="pokeon-about flying-skill">Flying</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/19.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#019</span>&nbsp;
+                                    <span class="pokemon-name">Rattata</span>
+                                </div>
+                                <span class="charge-move">Dig/Hyper Fang/Body Slam</span>
+                                <div class="about">
+                                    <span class="pokeon-about normal-skill">Normal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="pokemon-container">
+                            <div class="image-content">
+                                <img src="pokemon/20.png" alt="image not found">
+                            </div>
+
+                            <div class="about-content">
+                                <div class="id-name-container">
+                                    <span class="pokeon-id">#020</span>&nbsp;
+                                    <span class="pokemon-name">Raticate</span>
+                                </div>
+                                <span class="charge-move">Dig/Hyper Fang/Hyper Beam</span>
+                                <div class="about">
+                                    <span class="pokeon-about normal-skill">Normal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            © Copyright 2022 Western University, London. All rights reserved.
+        </div>
+        <div class="references">
+            <span class="ref-label">References:</span>
+            <a href="https://www.pokemon.com">www.pokemon.com</a>
+            <a href="https://www.w3schools.com">www.w3schools.com</a>
+            <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">Pokemon Data
+                Set</a>
+            <a href="https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/">Pokemon
+                Excel</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
