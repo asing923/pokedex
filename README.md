@@ -6,7 +6,7 @@ The pokemon list is updated in real-time as the user types or deletes characters
 
 ## Tech Stack:
 
-HTML: Markup language for creating the Pokédex application interface.
-JavaScript: Scripting language for dynamic DOM manipulation and real-time updates.
-CSS: Styling language used to create visually distinct content blocks.
-validator.w3.org: Tool for validating HTML code and ensuring compliance with industry standards.
+- HTML: Markup language for creating the Pokédex application interface.
+- JavaScript: Scripting language for dynamic DOM manipulation and real-time updates.
+- CSS: Styling language used to create visually distinct content blocks.
+- validator.w3.org: Tool for validating HTML code and ensuring compliance with industry standards.
